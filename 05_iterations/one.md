@@ -151,3 +151,51 @@ for (let i = superheroes.length -1; i >= 0; i--) {
     console.log(`Hero at index ${i}: ${superheroes[i]}`);
 }
 ```
+
+Task 3: Grid Coordinates Generator (Nested Loops)
+Practice working with nested loops to build a 2D coordinate grid.
+
+Create an outer loop for row (from 1 to 3).
+
+Create an inner loop for col (from 1 to 4).
+
+Print each coordinate in the format (row, col) (e.g., (1, 1), (1, 2)... (3, 4)).
+
+Challenge: Whenever row === col, log "Diagonal hit at (row, col)" before printing the coordinate!
+```Javascript
+for (let row = 1; row <=  3; row++) {
+    console.log(`Outer loop: ${row}`);
+    
+    for (let col = 1; col <= 4; col++) { 
+        console.log(`Inner loop: ${col}`);
+     if (row === col) {
+        console.log(`Diagonal hit at (${row}, ${col})`);
+     } 
+     console.log(`${row}, ${col}`);
+    }
+}
+```
+
+Task 4: Safe Array Index Boundary Check
+Demonstrate the common bug when loop conditions exceed array bounds.
+
+Declare const fruits = ["apple", "banana", "cherry"];
+
+Write a for loop using <= (index <= fruits.length) to purposefully trigger undefined.
+
+Inside the loop, add an if check:
+
+If the element is undefined, log "Warning: Index out of bounds at position [index]".
+
+Otherwise, log the fruit name.
+```Javascript
+const fruits = ["apple", "banana", "cherry"];
+
+for (let index = 0; index <= fruits.length; index++) {
+    // const element = array[index];
+    if (fruits[index] == undefined) {
+        console.log(`Warning: Index out of bounds at position ${index}`);
+    } else {
+        console.log(fruits[index]);
+    }
+}
