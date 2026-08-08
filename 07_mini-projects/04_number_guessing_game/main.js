@@ -35,6 +35,7 @@ function validateGuess(guess) {
         if (numGuess === 11) {
         displayGuess(guess);
         displayMessage(`Random number was ${randomNumber}`)
+        endGame();
         } else {
         displayGuess(guess);
         checkGuess(guess);
@@ -68,7 +69,7 @@ function endGame() {
     userInput.value = '';
     userInput.setAttribute('disabled', '');
     p.classList.add('button');
-    p.innerHTML = `<h2 id="newGame">Start new game</h2>`;
+    p.innerHTML = `<h2 id="newGame">Start New Game</h2>`;
     startOver.appendChild(p);
     playGame = false;
     newGame();
@@ -83,7 +84,7 @@ function endGame() {
         guessSlot.innerHTML = '';
         remaining.innerHTML = `${11 - numGuess}`
         userInput.removeAttribute('disabled');
-        userInput.appendChild(p);
+        startOver.removeChild(p);
 
         playGame = true;
     })
